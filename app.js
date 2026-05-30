@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- ZONK MEME IMAGES AND MOCKING QUOTES ---
     const ZONK_MEMES = [
         {
-            image: '/images/IMG_20251003_235747.jpg.jpeg',
+            image: 'images/IMG_20251003_235747.jpg.jpeg',
             quotes: [
                 "Muka kamu pas dapet Zonk mirip banget sama filter ini! Wkwkwk! 🤪",
                 "Liat nih muka kamu, lucuuu kan? Tapi lebih lucu lagi usaha kamu yang sia-sia dapet Zonk! 😂",
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            image: '/images/IMG_20251221_143614.jpg.jpeg',
+            image: 'images/IMG_20251221_143614.jpg.jpeg',
             quotes: [
                 "Ngapain mandi kalo ujung-ujungnya tetep dapet ZONK? 🚿😜 Hahaha, sia-sia amat!",
                 "Mandi udah wangi, cantik maksimal, eh tapi takdir tetep dapet ZONK! Sad... 🤣",
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            image: '/images/IMG_20260127_190557.jpg.jpeg',
+            image: 'images/IMG_20260127_190557.jpg.jpeg',
             quotes: [
                 "Wleeeeee! Kena zonk! Kasihan deh kamu, makanya jangan terlalu berharap! 😜",
                 "Melet dulu ah biar makin kesel! ZONK lagi kan, kasihan deh kamu! 🤪",
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            image: '/images/IMG_20260205_000836.jpg.jpeg',
+            image: 'images/IMG_20260205_000836.jpg.jpeg',
             quotes: [
                 "Tuh ditunjuk mukanya, mukanya langsung layu dapet Zonk! Tetot! 🤪",
                 "Pencet pipi dulu biar dapet hoki, eh ternyata zonk juga. Coba lagi gih! 🤣",
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            image: '/images/IMG_20260206_003254.jpg.jpeg',
+            image: 'images/IMG_20260206_003254.jpg.jpeg',
             quotes: [
                 "Mikir keras ya kenapa dapet zonk mulu? 🤔 Ya karena emang takdirmu hari ini dapet zonk!",
                 "Hmm... dapet apa ya? Oh tentu saja dapet Zonk! Gak usah sok mikir hoki deh! 😂",
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Load database JSON
         try {
-            const response = await fetch('/wheel-data.json');
+            const response = await fetch('wheel-data.json');
             if (!response.ok) throw new Error('Gagal memuat database JSON');
             const data = await response.json();
 
