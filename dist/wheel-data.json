@@ -1,0 +1,58 @@
+{
+  "prizes": [
+    {
+      "name": "jalan-jalan ke dufan",
+      "probability": 0.001,
+      "isZonk": false
+    },
+    {
+      "name": "di tf 1jt",
+      "probability": 0.001,
+      "isZonk": false
+    },
+    {
+      "name": "dibeliin iphone 17 pro max",
+      "probability": 0.001,
+      "isZonk": false
+    },
+    {
+      "name": "dibeliin rumah",
+      "probability": 0.001,
+      "isZonk": false
+    },
+    {
+      "name": "dibeliin mobil",
+      "probability": 0.001,
+      "isZonk": false
+    },
+    {
+      "name": "Zonk 1 (Coba Lagi)",
+      "probability": 0.199,
+      "isZonk": true
+    },
+    {
+      "name": "Zonk 2 (Semoga Beruntung)",
+      "probability": 0.199,
+      "isZonk": true
+    },
+    {
+      "name": "Zonk 3 (Hampir Saja!)",
+      "probability": 0.199,
+      "isZonk": true
+    },
+    {
+      "name": "Zonk 4 (Zonk!)",
+      "probability": 0.199,
+      "isZonk": true
+    },
+    {
+      "name": "Zonk 5 (Mencoba Kembali)",
+      "probability": 0.199,
+      "isZonk": true
+    }
+  ],
+  "vouchers": [
+    "ADIT-GANTENG",
+    "MOZZA-LOVE-YOU"
+  ]
+}

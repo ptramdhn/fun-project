@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin Wheel Premium - Acak Nama Online</title>
+    <meta name="description" content="Aplikasi Spin Wheel premium gratis, interaktif, dengan suara dinamis dan konfeti untuk mengacak nama seperti Wheel of Names.">
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- CSS Stylesheet -->
+  <script type="module" crossorigin src="/assets/index-DYHZYYWS.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-OQ_h5Fx8.css">
+</head>
+<body>
+    <!-- Canvas Konfeti Overlay (Mengambang di seluruh layar) -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="app-container">
+        <!-- HEADER APLIKASI -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">🎡</span>
+                <h1>Spin<span class="highlight">Wheel</span></h1>
+            </div>
+            <p class="subtitle">Putar roda keberuntungan Anda</p>
+        </header>
+
+        <!-- AREA UTAMA -->
+        <main class="main-content">
+            <!-- PANEL KIRI: RODA SPIN -->
+            <section class="wheel-section" id="wheel-section-id">
+                <div class="wheel-container">
+                    <!-- Roda Canvas -->
+                    <div class="wheel-wrapper">
+                        <canvas id="wheel-canvas" width="600" height="600"></canvas>
+                        <!-- Penunjuk Roda (Pointer) di sebelah kanan tengah -->
+                        <div class="wheel-pointer" id="wheel-pointer-id"></div>
+                        <!-- Tombol Spin di Tengah -->
+                        <button id="spin-button" class="spin-btn">SPIN</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL KANAN: SIDEBAR KONTROL -->
+            <section class="sidebar-section" id="sidebar-section-id">
+                <!-- Navigasi Tab -->
+                <div class="tab-nav">
+                    <button class="tab-btn active" data-tab="names-tab">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><line x1="2" y1="10" x2="22" y2="10" /><line x1="6" y1="14" x2="6" y2="16" /><line x1="10" y1="14" x2="14" y2="14" /></svg>
+                        Voucher & Hadiah
+                    </button>
+                    <button class="tab-btn" data-tab="settings-tab">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                        Pengaturan
+                    </button>
+                    <button class="tab-btn" data-tab="results-tab">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                        Hasil
+                    </button>
+                </div>
+
+                <!-- Konten Tab -->
+                <div class="tab-container">
+                    <!-- Tab Voucher & Hadiah -->
+                    <div class="tab-content active" id="names-tab">
+                        <!-- Voucher Input Form -->
+                        <div class="voucher-box">
+                            <label for="voucher-input" class="voucher-label">🎫 Masukkan Kode Voucher</label>
+                            <div class="voucher-input-group">
+                                <input type="text" id="voucher-input" placeholder="Contoh: SPIN100" autocomplete="off" spellcheck="false">
+                                <button id="claim-voucher-btn" class="claim-btn">Klaim</button>
+                            </div>
+                            <div id="voucher-status-msg" class="voucher-status-msg"></div>
+                        </div>
+
+                        <!-- Prizes & Vouchers Info Grid -->
+                        <div class="info-lists-container">
+                            <div class="info-list-section">
+                                 <h3 class="section-title">🎁 Daftar Hadiah Roda</h3>
+                                 <div class="table-scroll-wrapper">
+                                     <table class="prizes-table">
+                                         <thead>
+                                             <tr>
+                                                 <th>Nama Hadiah</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody id="prizes-table-body">
+                                             <!-- Hadiah dimasukkan dinamis lewat JS -->
+                                         </tbody>
+                                     </table>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Pengaturan -->
+                    <div class="tab-content" id="settings-tab">
+                        <div class="settings-group">
+                            <label for="spin-duration">
+                                <span>⏱️</span> Waktu Putar (detik): <span id="spin-duration-val">5</span>
+                            </label>
+                            <input type="range" id="spin-duration" min="2" max="20" value="5" step="1">
+                        </div>
+
+                        <div class="settings-group">
+                            <label><span>🎨</span> Palet Warna Roda</label>
+                            <div class="color-palette-options">
+                                <label class="palette-option active">
+                                    <input type="radio" name="color-palette" value="rainbow" checked>
+                                    <span class="palette-preview rainbow"></span> Rainbow
+                                </label>
+                                <label class="palette-option">
+                                    <input type="radio" name="color-palette" value="neon">
+                                    <span class="palette-preview neon"></span> Cyber Neon
+                                </label>
+                                <label class="palette-option">
+                                    <input type="radio" name="color-palette" value="sunset">
+                                    <span class="palette-preview sunset"></span> Warm Sunset
+                                </label>
+                                <label class="palette-option">
+                                    <input type="radio" name="color-palette" value="ocean">
+                                    <span class="palette-preview ocean"></span> Deep Ocean
+                                </label>
+                                <label class="palette-option">
+                                    <input type="radio" name="color-palette" value="forest">
+                                    <span class="palette-preview forest"></span> Forest Fresh
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <label for="volume-control">
+                                <span>🔊</span> Volume Suara: <span id="volume-val">80%</span>
+                            </label>
+                            <input type="range" id="volume-control" min="0" max="100" value="80">
+                        </div>
+
+                        <div class="settings-group toggle-group">
+                            <label class="switch-container">
+                                <input type="checkbox" id="sound-effects-toggle" checked>
+                                <span class="switch-slider"></span>
+                                <span class="switch-label">Efek Suara Tik Roda</span>
+                            </label>
+                        </div>
+
+                        <div class="settings-group toggle-group">
+                            <label class="switch-container">
+                                <input type="checkbox" id="confetti-toggle" checked>
+                                <span class="switch-slider"></span>
+                                <span class="switch-label">Perayaan Konfeti</span>
+                            </label>
+                        </div>
+
+                        <!-- Opsi Hapus Otomatis Dihapus (Sistem Juring Tetap) -->
+                    </div>
+
+                    <!-- Tab Hasil -->
+                    <div class="tab-content" id="results-tab">
+                        <div class="results-actions">
+                            <button id="copy-results-btn" class="action-btn">
+                                <span>📋</span> Salin Hasil
+                            </button>
+                            <button id="clear-results-btn" class="action-btn danger">
+                                <span>🗑️</span> Kosongkan Riwayat
+                            </button>
+                        </div>
+                        <ul id="results-list" class="results-list">
+                            <!-- Riwayat pemenang dimasukkan dinamis lewat JS -->
+                            <li class="empty-state">Belum ada pemenang yang diacak</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- DIALOG MODAL PEMENANG (POP-UP) -->
+    <div id="winner-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="winner-modal-title">Selamat! 🎉</h2>
+            </div>
+            <div class="modal-body">
+                <p id="modal-desc-text">Nama yang terpilih adalah:</p>
+                <div id="winner-name-display" class="winner-glow">PEMENANG</div>
+                
+                <!-- Area Khusus Zonk (Gambar & Sindiran Ngeselin) -->
+                <div id="zonk-media-container" class="zonk-media-container" style="display: none;">
+                    <img id="zonk-image" src="" alt="Meme Zonk">
+                    <p id="zonk-quote" class="zonk-quote">Kata-kata sindiran...</p>
+                </div>
+            </div>
+            <div class="modal-footer" style="justify-content: center;">
+                <button id="close-modal-btn" class="modal-btn close-btn" style="flex: none; min-width: 150px; background: var(--grad-accent); color: #fff; box-shadow: 0 4px 12px rgba(255, 0, 127, 0.3); border: none;">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Invisible YouTube Player for backsound -->
+    <div id="yt-player" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; top: -100px; left: -100px;"></div>
+
+    <!-- Javascript Logic -->
+</body>
+</html>
