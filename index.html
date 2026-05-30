@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spin Wheel Premium - Acak Nama Online</title>
-    <meta name="description" content="Aplikasi Spin Wheel premium gratis, interaktif, dengan suara dinamis dan konfeti untuk mengacak nama seperti Wheel of Names.">
+    <title>Mozza Spin Premium - Dapatkan hadiah dari pacar!</title>
+    <meta name="description"
+        content="Aplikasi Spin Wheel premium gratis, interaktif, dengan suara dinamis dan konfeti untuk mengacak nama seperti Wheel of Names.">
     <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +14,7 @@
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Canvas Konfeti Overlay (Mengambang di seluruh layar) -->
     <canvas id="confetti-canvas"></canvas>
@@ -21,9 +24,9 @@
         <header class="app-header">
             <div class="logo">
                 <span class="logo-icon">🎡</span>
-                <h1>Spin<span class="highlight">Wheel</span></h1>
+                <h1>Mozza<span class="highlight">Spin</span></h1>
             </div>
-            <p class="subtitle">Putar roda keberuntungan Anda</p>
+            <p class="subtitle">Putar roda keberuntungan Mozza</p>
         </header>
 
         <!-- AREA UTAMA -->
@@ -47,15 +50,31 @@
                 <!-- Navigasi Tab -->
                 <div class="tab-nav">
                     <button class="tab-btn active" data-tab="names-tab">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><line x1="2" y1="10" x2="22" y2="10" /><line x1="6" y1="14" x2="6" y2="16" /><line x1="10" y1="14" x2="14" y2="14" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <line x1="2" y1="10" x2="22" y2="10" />
+                            <line x1="6" y1="14" x2="6" y2="16" />
+                            <line x1="10" y1="14" x2="14" y2="14" />
+                        </svg>
                         Voucher & Hadiah
                     </button>
                     <button class="tab-btn" data-tab="settings-tab">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z">
+                            </path>
+                        </svg>
                         Pengaturan
                     </button>
                     <button class="tab-btn" data-tab="results-tab">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                        </svg>
                         Hasil
                     </button>
                 </div>
@@ -68,7 +87,8 @@
                         <div class="voucher-box">
                             <label for="voucher-input" class="voucher-label">🎫 Masukkan Kode Voucher</label>
                             <div class="voucher-input-group">
-                                <input type="text" id="voucher-input" placeholder="Contoh: SPIN100" autocomplete="off" spellcheck="false">
+                                <input type="text" id="voucher-input" placeholder="Contoh: SPIN100" autocomplete="off"
+                                    spellcheck="false">
                                 <button id="claim-voucher-btn" class="claim-btn">Klaim</button>
                             </div>
                             <div id="voucher-status-msg" class="voucher-status-msg"></div>
@@ -77,19 +97,19 @@
                         <!-- Prizes & Vouchers Info Grid -->
                         <div class="info-lists-container">
                             <div class="info-list-section">
-                                 <h3 class="section-title">🎁 Daftar Hadiah Roda</h3>
-                                 <div class="table-scroll-wrapper">
-                                     <table class="prizes-table">
-                                         <thead>
-                                             <tr>
-                                                 <th>Nama Hadiah</th>
-                                             </tr>
-                                         </thead>
-                                         <tbody id="prizes-table-body">
-                                             <!-- Hadiah dimasukkan dinamis lewat JS -->
-                                         </tbody>
-                                     </table>
-                                 </div>
+                                <h3 class="section-title">🎁 Daftar Hadiah Roda</h3>
+                                <div class="table-scroll-wrapper">
+                                    <table class="prizes-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Nama Hadiah</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="prizes-table-body">
+                                            <!-- Hadiah dimasukkan dinamis lewat JS -->
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -184,7 +204,7 @@
             <div class="modal-body">
                 <p id="modal-desc-text">Nama yang terpilih adalah:</p>
                 <div id="winner-name-display" class="winner-glow">PEMENANG</div>
-                
+
                 <!-- Area Khusus Zonk (Gambar & Sindiran Ngeselin) -->
                 <div id="zonk-media-container" class="zonk-media-container" style="display: none;">
                     <img id="zonk-image" src="" alt="Meme Zonk">
@@ -192,15 +212,19 @@
                 </div>
             </div>
             <div class="modal-footer" style="justify-content: center;">
-                <button id="close-modal-btn" class="modal-btn close-btn" style="flex: none; min-width: 150px; background: var(--grad-accent); color: #fff; box-shadow: 0 4px 12px rgba(255, 0, 127, 0.3); border: none;">Tutup</button>
+                <button id="close-modal-btn" class="modal-btn close-btn"
+                    style="flex: none; min-width: 150px; background: var(--grad-accent); color: #fff; box-shadow: 0 4px 12px rgba(255, 0, 127, 0.3); border: none;">Tutup</button>
             </div>
         </div>
     </div>
 
     <!-- Invisible YouTube Player for backsound -->
-    <div id="yt-player" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; top: -100px; left: -100px;"></div>
+    <div id="yt-player"
+        style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; top: -100px; left: -100px;">
+    </div>
 
     <!-- Javascript Logic -->
     <script type="module" src="app.js"></script>
 </body>
+
 </html>
